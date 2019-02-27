@@ -2,228 +2,27 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 		<title> My First Git Note</title>
-		<link rel="stylesheet" href="css/common-css.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/border.css" />
+		<link rel="stylesheet" href="css/git.css" />
+		<script type="text/javascript" src="js/rem.js" ></script>
 	</head>
 	<body>
-		<div class="title">Git基本命令笔记</div>
+		<div class="title"></div>
 		<div class="content">
 			<div class="Knowlg-point">
 				<div class="point-keyword">一、创建一个版本库</div>
 				<ul class="point-content">
-					<li><span><i>$</i> cd:e</span>进入E盘 </li>
-					<li><span><i>$</i> mkdir learngit</span>创建文件夹</li>
-					<li><span><i>$</i> pwd</span>识别当前所在位置 </li>
-					<li><span><i>$</i> git init </span>把这个目录变成Git可以管理的仓库</li>
-					<li><span><i>$</i> git config --global user.name "用户名字"</code> </span>设置用户名 </li>
-					<li><span><i>$</i> git config --global user.email "用户邮箱"</code></span>设置邮箱
-						<div class="point-instru">
-							如果想查看用户名和邮箱就直接 
-							<p>$ git config --global  user.name </p>
-     						<p>$ git config --global  user.email</p>
-    						查看所有配置
-    						<p>$ git config --list</p>
-						</div>
-					</li>
-					<li><span><i>$</i> cd learngit </span>进入learngit文件夹 </li>
-					<li><span><i>$</i> vi</span>进入文件开始编辑<file.name>
-						<div class="point-instru">（键盘输入字母i或Insert键进入最常用的插入编辑模式。）</div>
-						<div class="point-instru">（按住Esc  Shift ++  zz    // 保存文件并退出）</div>
-					</li>
-					<li><span><i>$</i> git clone</span>克隆远程项目<url> </li>
-					<li><span><i>$</i> git diff</span> 是对比工作区和暂存区的差异</li>
-					<li><span><i>$</i> git diff --cached</span> 是对比暂存区和库存区的差异</li>
-					<li><span><i>$</i> git diff --分支名称</span> 是对比工作区和分支（版本）库存区的差异</li>
+					<li><span><i>$</i> cd:e</span>进入E盘 </li>	
 				</ul>
 			</div>
 			
-			<div class="Knowlg-point">
-				<div class="point-keyword">二、提交</div>
-				<ul class="point-content">
-					<li><span><i>$</i> git commit -a -m "提交说明"  </span> 直接提交到版本库</li>
-					<li><span><i>$</i> git add -A  </span> 提交所有变化</li>
-					<li><span><i>$</i> git add -u  </span> 提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</li>
-					<li><span><i>$</i> git add    </span> 提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</li>
-					<li><span><i>$</i> git add 文件名   </span> 把文件添加到暂存区</li>
-					<li><span><i>$</i> git commit -m " 提交说明 "  </span> 把文件提交到版本库</li>
-					<li><span><i>$</i> git commit -m "说明" --amend  </span>[想将放在版本库的退回来和还没有提交到库存区的其他文件一起提交到库存区（变成一个版本）] </li>
-					<li><span><i>$</i> git status</span> 随时掌握工作区的状态  </li>	
-				</ul>
-			</div>
-			
-			<div class="Knowlg-point">
-				<div class="point-keyword">三、版本退回</div>
-				<ul class="point-content">
-					<li><span><i>$</i> git log</span> 查看版本
-						<div class="point-instru">（当版本较多是一次性显示不全，可以按回车，显示隐藏的。然后可以按 q 退出界面）</div>
-					</li>
-					<li><span><i>$</i> git log --pretty=oneline </span> 显示版本号＋备注内容</li>
-					<li><span><i>$</i> git reset HEAD <文件名></span> 回到最近一个版本（针对某个文件的版本）</li>
-					<li><span><i>$</i> git reset --hard HEAD </span> 当前版本（针对版本）</li>
-					<li><span><i>$</i> git reset --hard HEAD^ </span> 上一个版本</li>
-					<li><span><i>$</i> git reset --hard HEAD^^</span> 上上一个版本</li>
-					<li><span><i>$</i> git reset --hard HEAD~n</span> 回到过去的n版本</li>
-					<li><span><i>$</i> git reset --hard + ”版本号“  </span> 返回想返回的版本</li>
-					<li><span><i>$</i> git reflog </span> 记录你的每一次命令
-						<div class="point-instru">(根据命令的记录，将还原的版本回到现在最近的版本) </div>
-					</li>
-					<li><span><i>$</i> ls </span> 查看当前文件夹下所包含的文件</li>
-					<li><span><i>$</i> $ cat + "文件名" </span> 显示文件的内容</li>	
-				</ul>
-			</div>
-			
-			<div class="Knowlg-point">
-				<div class="point-keyword">四、撤销修改</div>
-				<ul class="point-content">
-					<li><span><i>$</i> git checkout commit id 文件名 </span>放弃已经保存的编辑，回到修改前(针对某个文件)</li>	
-				</ul>
-			</div>
-			
-			<div class="Knowlg-point">
-				<div class="point-keyword">五、删除文件</div>
-				<ul class="point-content">
-					<li><span><i>$</i> git rm 文件名</span> 删除暂存区的文件(前提是工作区已经删除了该文件)</li>	
-					<li><span><i>$</i> git rm -cached 文件名</span>  删除暂存区的文件（不用先删除工作区的文件）</li>
-					<li><span><i>$</i> git rm -f 文件名</span>  同时删除工作区和暂存区的文件</li>
-					<div class="point-instru">（删除后要执行$ git add  然后  $ git commit -m "提交说明"   然后提交到远程仓库时，要先$ git pull ,然后再$ git push ）</div>
-				</ul>
-			</div>
-			<div class="Knowlg-point">
-				<div class="point-keyword">六、生成GitHub秘钥</div>
-				<ul class="point-content">
-					<li><span><i>$</i> ssh-keygen -t rsa -C "youremail@example.com" </span>创建SSH Key 
-						<div class="point-instru">(查看秘钥要打开文件  id_rsa   和   id_rsa.pub 、 创建秘钥后要在远程仓上设置  )</div>
-					</li>	
-				</ul>
-			</div>
-			
-			<div class="Knowlg-point">
-				<div class="point-keyword">七、将远程仓的项目克隆到本地</div>
-				<ul class="point-content">
-					<li><span><i>$</i> git clone git@github.com:GitHub账户名/文件名.git </span>克隆一个本地库</li>	
-					<li><span><i>$</i> git remote</span>远程仓库的名字</li>	
-					<li><span><i>$</i> git remote  -v </span>查看远程仓库的地址</li>	
-					<li><span><i>$</i> git remote add origin git@github.com:GitHub账户名/文件名.git </span>本地和远程仓关联起来</li>			
-				</ul>
-			</div>
-			
-			<div class="Knowlg-point">
-				<div class="point-keyword">八、拉取远程仓的文件</div>
-				<ul class="point-content">
-					<li><span><i>拉取远程的文件：  $</i> git getch </span>(需要手动合并)</li>	
-					<li><span><i>1、$</i> git diff master origin/master</span>(比较本地和远程仓的不同)</li>	
-					<li><span><i>2、$</i> git merge origin/master</span></li>	
-					<li><span><i>拉取远程的文件：  $</i>  git pull</span>（自动合并）</li>	
-				</ul>
-			</div>
-			
-			<div class="Knowlg-point">
-				<div class="point-keyword">九、把本地仓库的内容推送到GitHub仓库</div>
-				<ul class="point-content">
-					<li><span><i>$</i> git push -u origin master</span> 第一次推送master分支的所有内容(指定origin为默认主机)</li>	
-					<li><span><i>$</i> git push origin master</span>推送最新修改（将当前分支推送到origin主机的对应分支master）</li>		
-				</ul>
-			</div>
-			
-			<div class="Knowlg-point">
-				<div class="point-keyword">十、分支管理</div>
-				<ul class="point-content">
-					<li><span><i>$</i> git branch</span> 查看分支git</li>	
-					<li><span><i>$</i> git checkout -b 分支名称</span>创建+切换分支</li>		
-					<li><span><i>$</i> git branch 分支名称</span>创建分支</li>		
-					<li><span><i>$</i> git checkout 分支名称</span>切换分支</li>		
-					<li><span><i>$</i> git branch --merged</span>查看当前分支下所合并的分支</li>		
-					<li><span><i>$</i> git branch --no-merged</span>查看当前分支下所没有合并的分支</li>		
-					<li><span><i>$</i> git merge 分支名称</span>合并某分支到当前分支
-						<div class="point-instru">(合并后的分支可以删除，已经没有什么意义)</div>
-					</li>		
-					<li><span><i>$</i> git branch -d 分支名称</span>删除分支
-						<div class="point-instru">（分支先合并后才能删除）</div>	
-					<li><span><i>$</i> git branch -D 文件名  强行删除</span>删除没有合并的分支</li>		
-				</ul>
-			</div>
-			
-			<div class="Knowlg-point">
-				<div class="point-keyword">十一、解决冲突</div>
-				<ul class="point-content">
-					<li><span><i>（合并分支发生冲突 , vi修改冲突的文件，然后git add  在git commit 就能合并文件）</i></span> </li>	
-					<li><span><i>$</i> git log --graph --pretty=oneline --abbrev-commit </span>使用带参数的git log ,查看分支的合并情况
-						<div class="point-instru">（用git log --graph命令可以看到分支合并图。）</div>
-					</li>		
-				</ul>
-			</div>
-			<div class="Knowlg-point">
-				<div class="point-keyword">十二、分支管理策略</div>
-				<ul class="point-content">
-					<li><span><i>$</i> git merge --no-ff -m "merge with no-ff" dev</span> 
-						<div class="point-instru">
-							（通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。如果要强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。）
-						</div>
-					</li>					
-				</ul>
-			</div>
-			
-			<div class="Knowlg-point">
-				<div class="point-keyword">十三、Bug分支</div>
-				<ul class="point-content">
-					<li><span><i>$</i> git stash</span> 把当前工作现场“储藏”起来，等以后恢复现场后继续工作 </li>	
-					<li><span>恢复现场</span></li>	
-					<li><span><i>1、$</i> git stash apply </span>恢复</li>		
-					<li><span> <i>$</i> git stash drop </span>把stash内容删除</li>		
-					<li><span><i>2、$</i> git stash pop </span>恢复的同时把stash内容也删了</li>		
-				</ul>
-			</div>
-			
-			<div class="Knowlg-point">
-				<div class="point-keyword">十四、推送分支</div>
-				
-				<ul class="point-content">
-					<div class="point-en">（master分支是主分支  dev分支是开发分支   bug分支只用于在本地修复bug  feature分支是否推到远程）</div>
-					<li><span><i>$</i> git remote </span> 查看远程库的信息</li>	
-					<li><span><i>$</i> git remote -v  </span>显示更详细的信息</li>		
-					<li><span><i>$</i> git push origin  分支名称  </span>推送分支</li>		
-					<li><span><i>$</i> git pull </span>拉取试图合并
-						<div class="point-instru">（提示no tracking information )</div>
-					</li>		
-					<li><span><i>$</i> git branch --set-upstream-to 分支名称 origin/分支名称 </span>建立本地分支和远程分支的关联</li>		
-					<li><span><i>$</i> git checkout -b 分支名称 origin/分支名称  </span>在本地创建和远程分支对应的分支</li>		
-					<li><span><i>$</i> git rebase  </span>把本地未push的分叉提交历史整理成直线</li>		
-				</ul>
-			</div>
-			
-			<div class="Knowlg-point">
-				<div class="point-keyword">十五、创建标签</div>
-				<ul class="point-content">
-					<li><span><i>$</i> git tag 标签名称 </span> 打一个新标签</li>	
-					<li><span><i>$</i> git tag </span> 查看所有标签</li>	
-					<li><span><i>$</i> git log --pretty=oneline --abbrev-commit </span> 找到历史提交的commit id</li>	
-					<li><span><i>$</i> git tag 标签名称 commit id </span> 给对应的commit id </li>	
-					<li><span><i>$</i> git show 标签名称   </span>查看标签信息</li>	
-					<li><span><i>$</i> git tag -a 标签名称 -m "说明" commit id  </span>创建带有说明的标签
-						<div class="point-instru">（$ git tag -a v0.1 -m "version 0.1 released" 1094adb）</div>	
-					</li>	
-					<li><span><i>$</i> git tag -d 标签名称  </span>删除标签</li>	
-					<li><span><i>$</i> git push origin 标签名称  </span>推送某个标签到远程</li>	
-					<li><span><i>$</i> git push origin --tags </span>一次性推送全部尚未推送到远程的本地标签
-						<div class="point-instru">（标签不会自动推送到远程仓库，如果手动推送到远程仓库，删除标签的时候就要先删除本地的先，然后在删除远程的标签）</div>
-					</li>	
-					<li><span><i>$</i> git push origin :refs/tags/标签名称  </span>可以删除一个远程标签</li>	
-				</ul>
-			</div>
-			
+			<a href="git.html">我的Git笔记</a>
 		</div>
 		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
 		<script>
-			$(function(){
-				var aw = $(window).width();
-					var fs = aw/7.5;
-					if(aw > 750){
-						fs = 100 ;	
-					}
-					$("html").css("font-size",fs);
-
-			})
 			$(document).ready(function(){
 				$('.point-keyword').click(function(){
 					$(this).siblings('.point-content').slideToggle();
